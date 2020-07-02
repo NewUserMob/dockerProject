@@ -16,18 +16,21 @@ public class DockerChrome {
 	public static void main(String[] args) throws MalformedURLException {
 //		WebDriver driver = new FirefoxDriver();
 		
-//		DesiredCapabilities dc =  DesiredCapabilities.firefox();
-//		
-//		URL url = new URL("http://localhost:4444/wd/hub");
-//		
-//		RemoteWebDriver driver = new RemoteWebDriver(url,dc);
-		WebDriver driver;
-		 WebDriverManager.chromedriver().setup();
-
-         //System.setProperty("webdriver.chrome.driver", "C:\\ChromeDriver\\chromedriver.exe");
-         driver = new ChromeDriver();
+		DesiredCapabilities dc =  DesiredCapabilities.chrome();
+		
+		URL url = new URL("http://localhost:4444/wd/hub");
+		
+		RemoteWebDriver driver = new RemoteWebDriver(url,dc);
 		driver.get("https://google.com");
 		System.out.println("the title is: " +driver.getTitle());
+		
+		// standalone file
+//		WebDriver driver;
+//		 WebDriverManager.chromedriver().setup();
+//
+//         driver = new ChromeDriver();
+//		driver.get("https://google.com");
+//		System.out.println("the title is: " +driver.getTitle());
 		
 		driver.quit();
 	}
